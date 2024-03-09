@@ -3,7 +3,7 @@ import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure}
 import {Button} from "@nextui-org/button"
 import {useFormState} from 'react-dom'
 import { useState } from "react";
-import handleCertFormAction from "../actions";
+import {handleCertFormAction} from "../actions";
 import {Autocomplete, AutocompleteItem} from "@nextui-org/autocomplete";
 import { certs } from "../dataSets/certs";
 
@@ -34,7 +34,7 @@ export default function App() {
 
 
   return (
-    <>
+    <><form action={setFormState}>
       <Button onPress={onOpen}>+</Button>
       <Modal isOpen={isOpen} onOpenChange={setModalState} isDismissable={false} isKeyboardDismissDisabled={true}>
         <ModalContent>
@@ -42,7 +42,7 @@ export default function App() {
             <>
               <ModalHeader className="flex flex-col gap-1">Modal Title</ModalHeader>
                 <ModalBody>
-                    <form action={setFormState}>
+                    
                         <Autocomplete 
                         allowsCustomValue
                         label="Search an animal" 
@@ -55,13 +55,13 @@ export default function App() {
                         {(item) => <AutocompleteItem key={item.value} name="cert" id={item.value} value={item.value}>{item.label}</AutocompleteItem>}
 
                         </Autocomplete>
-                    </form>
+                    
                 </ModalBody>
               <ModalFooter>
-                <Button color="danger" variant="light" onPress={onClose}>
+                <Button key="certCancel" color="danger" variant="light" onPress={onClose}>
                   Close
                 </Button>
-                <Button color="primary" onPress={onClose}>
+                <Button key="certAccept" color="primary" onPress={onClose}>
                   Action
                 </Button>
               </ModalFooter>
@@ -69,6 +69,7 @@ export default function App() {
           )}
         </ModalContent>
       </Modal>
+      </form>
     </>
   );
 }

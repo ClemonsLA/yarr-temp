@@ -11,11 +11,11 @@ export default function MainCard(){
     return (
     <Card
       isBlurred
-      className="border-none bg-background/60 dark:bg-default-100/50 w-full h-[100vh]"
+      className="border-none bg-background/60 dark:bg-default-100/50 w-[50vw] h-[100vh]"
       shadow="sm"
     >
       <CardBody>
-        <div className="grid items-center justify-center h-[100vh] w-[100vw]">
+        <div className="grid items-center justify-center h-[100vh] w-full">
             <InterviewTabs childCerts={<CertSelect/>} childBuzz={<BuzzWords selected={selected} setSelected={setSelected} />} />
         </div>
       </CardBody>

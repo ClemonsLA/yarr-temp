@@ -1,10 +1,13 @@
 "use client"
 import {Tabs, Tab} from "@nextui-org/tabs";
 import { Card,CardBody } from "@nextui-org/card";
+import { Button } from "@nextui-org/button";
 import { useState } from "react";
+import {userDataTestRR} from "../actions";
 
 export default function App({childChar, childExp, childCerts, childBuzz, childClear}) {
     const [selected, setSelected] = useState("Career");
+    
   
     return (
       <div className="flex w-full flex-col">
@@ -18,6 +21,7 @@ export default function App({childChar, childExp, childCerts, childBuzz, childCl
             <Card>
               <CardBody>
                 <form>
+                    <Button key="notcertbutton" onPress={async ()=>userDataTestRR()}></Button>
                     {childChar}
                 </form>
               </CardBody>
@@ -44,9 +48,7 @@ export default function App({childChar, childExp, childCerts, childBuzz, childCl
           <Tab key="Buzz" title="Technologies">
             <Card>
               <CardBody>
-                <form>
                     {childBuzz}
-                </form>
               </CardBody>
             </Card>  
           </Tab>
