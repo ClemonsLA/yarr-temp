@@ -1,12 +1,21 @@
 "use client"
+import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyValue} from "@nextui-org/table";
 import {Tabs, Tab} from "@nextui-org/tabs";
 import { Card,CardBody } from "@nextui-org/card";
 import { Button } from "@nextui-org/button";
 import { useState } from "react";
 import {userDataTestRR} from "../actions";
 
+
 export default function App({childChar, childExp, childCerts, childBuzz, childClear}) {
+
     const [selected, setSelected] = useState("Career");
+    const testCertsTwo = [
+      {key: "32", cert: "sec+",}, {key: "2", cert: "CCNA",}, {key: "90", cert: "AWS",}
+    ];
+    const testColsTwo = [
+      {key: "cert", label: "Certification"},
+    ];
     
   
     return (
@@ -42,6 +51,16 @@ export default function App({childChar, childExp, childCerts, childBuzz, childCl
                 <form>
                     {childCerts}
                 </form>
+                <Table removeWrapper hideHeader aria-label="cert table">
+                  <TableHeader columns={testColsTwo}>
+                    {(column)=><TableColumn key={column.key}>{column.label}</TableColumn>}
+                  </TableHeader>
+                  <TableBody items={testCertsTwo}>
+                    {(item)=>(<TableRow key={testCertsTwo.key}>
+                      {(columnKey)=><TableCell>{getKeyValue(item, columnKey)}</TableCell>}
+                    </TableRow>)}
+                  </TableBody>
+                </Table>
               </CardBody>
             </Card>  
           </Tab>

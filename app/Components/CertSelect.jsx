@@ -7,6 +7,7 @@ import {handleCertFormAction} from "../actions";
 import {Autocomplete, AutocompleteItem} from "@nextui-org/autocomplete";
 import { certs } from "../dataSets/certs";
 
+
 export default function App() {
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
   const [value, setValue] = useState('');
@@ -34,7 +35,8 @@ export default function App() {
 
 
   return (
-    <><form action={setFormState}>
+    <>
+    <form action={setFormState}>
       <Button onPress={onOpen}>+</Button>
       <Modal isOpen={isOpen} onOpenChange={setModalState} isDismissable={false} isKeyboardDismissDisabled={true}>
         <ModalContent>

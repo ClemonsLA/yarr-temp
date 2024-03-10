@@ -1,5 +1,7 @@
 "use server"
 
+import { revalidatePath } from "next/cache";
+
 const tempUserDataStore = {
     username: 7373,
     character: '',
@@ -16,11 +18,16 @@ export async function userDataTestRR(){
       }
 }
 
+export async function getUserDataPreload(){
+    return tempUserDataStore;
+}
+
 export async function handleCertFormAction(prevData, formData){
     console.log("handle certs is going off")
     console.log(formData)
     tempUserDataStore.certifications.push(formData)
     console.log(`User certs are now: ${tempUserDataStore.certifications}`)
+    revalidatePath('/interview/certifications')
     return tempUserDataStore.certifications;
 }
 

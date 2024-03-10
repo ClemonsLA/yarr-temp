@@ -3,8 +3,9 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div>
-      <Link href="/start">lets go</Link>
+    <div className="grid">
+      <Link href="/start">old route</Link>
+      <Link href="/interview">new route</Link>
     </div>
   );
 }
