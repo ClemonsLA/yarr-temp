@@ -1,8 +1,8 @@
 'use client'
-import { useState } from 'react'
+import React from 'react'
 
 export function useMultiStepForm(arr){
-    const [step, setStep] = useState(0);
+    const [step, setStep] = React.useState(0);
 
     function NextStep(){
         setStep(step + 1);

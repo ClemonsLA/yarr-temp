@@ -2,16 +2,20 @@
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure} from "@nextui-org/modal";
 import {Button} from "@nextui-org/button"
 import {useFormState} from 'react-dom'
-import { useState } from "react";
+import React from "react";
 import {handleCertFormAction} from "../actions";
 import {Autocomplete, AutocompleteItem} from "@nextui-org/autocomplete";
-import { certs } from "../dataSets/certs";
 
 
+const certs = [
+  {value:"comptiaSec+", name: "sec+", label: "Sec +", vendor: "CompTIA"},
+  {value:"ciscoCcna", name: "ccna", label: "CCNA", vendor: "Cisco"},
+  {value:"awsCcp", name: "ccp", label: "CCP", vendor: "AWS"},
+]
 export default function App() {
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
-  const [value, setValue] = useState('');
-  const [selectedKey, setSelectedKey] = useState(null); 
+  const [certValue, setCertValue] = React.useState('choosing');
+  const [selectedKey, setSelectedKey] = React.useState(null); 
   const initState = {
     name: 'This',
     value: 'sucks',
@@ -22,14 +26,14 @@ export default function App() {
     setSelectedKey(id);
   };
   
-  const onInputChange = (value) => {
-    setValue(value)
+  const onInputChange = (certValue) => {
+    setCertValue(certValue)
   };
 
 
   const setModalState = (isOpen) => {
     onOpenChange(isOpen);
-    setFormState(value)
+    setFormState(certValue)
 
   }
 

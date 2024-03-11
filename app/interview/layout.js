@@ -1,7 +1,6 @@
 import MainTabSelections from '../interviewComponents/MainTabSelections'
-import Link from 'next/link'
 
-export default function InterviewLayout({children, career, certifications, clearance, experience, technologies}){
+export default function InterviewLayout({children, Career, Certifications, Experience, Technologies}){
     return <div className="h-[100vh] w-[100vw] grid justify-items-center content-center">
 
         <div className="h-[88vh] w-[93vw] flex border-2 border-white border-solid flex-cols-3 content-center justify-center flex-wrap">
@@ -13,7 +12,7 @@ export default function InterviewLayout({children, career, certifications, clear
                 <div className='grid'>
                     
                     <div>hello</div>
-                    <MainTabSelections certifications={certifications} clearance={clearance} technologies={technologies} experience={experience} career={career}></MainTabSelections>
+                    <MainTabSelections Certifications={Certifications} Technologies={Technologies} Experience={Experience} Career={Career}></MainTabSelections>
                 </div>
             </div>
             <div className="h-[76vh] w-[17vw] box-border border-2 border-solid border-yellow-500">

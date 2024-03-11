@@ -7,9 +7,6 @@ const nextConfig = {
         serverActions: {
           allowedOrigins: [
             'localhost:3000',
-            'rr-v2.vercel.app',
-            'https://rr-v2.vercel.app',
-            'https://rr-v2.vercel.app/create/cybercatInterview',
             '72.20.140.35',
             'https://72.20.140.35',
             'rr-v2-q9ybpm1tc-cv-2-nft-main.vercel.app',

@@ -1,16 +1,14 @@
 "use client"
-import {CheckboxGroup} from "@nextui-org/checkbox"
-import { Button } from "@nextui-org/button"
-import { CustomCheckbox } from "./CustomCheckbox"
-import {useState} from "react"
+import {CheckboxGroup, Checkbox} from "@nextui-org/checkbox"
+import React from "react";
 import {useFormState} from "react-dom"
 import {handleBuzzFormAction} from "@/app/actions/"
 import { userDataTestRR } from "@/app/actions";
 
 
 export default function App({buzzwords}) {
-  const [groupSelected, setGroupSelected] = useState(buzzwords);
-  const [techFormState, setTechFormState] = useFormState(handleBuzzFormAction, new Array)
+  const [groupSelected, setGroupSelected] = React.useState(buzzwords);
+  const [techFormState, setTechFormState] = useFormState(handleBuzzFormAction, null)
 
   const fuckThisForm = (groupSelected) =>{
     setGroupSelected(groupSelected);
@@ -30,18 +28,15 @@ export default function App({buzzwords}) {
         name="tech"
       >
         
-        <CustomCheckbox value="wifi">Wifi</CustomCheckbox>
-        <CustomCheckbox value="tv">TV</CustomCheckbox>
-        <CustomCheckbox value="kitchen">Kitchen</CustomCheckbox>
-        <CustomCheckbox value="parking">Parking</CustomCheckbox>
-        <CustomCheckbox value="pool">Pool</CustomCheckbox>
-        <CustomCheckbox value="gym">Gym</CustomCheckbox>
+        <Checkbox value="wifi">Wifi</Checkbox>
+        <Checkbox value="tv">TV</Checkbox>
+        <Checkbox value="kitchen">Kitchen</Checkbox>
+        <Checkbox value="parking">Parking</Checkbox>
+        <Checkbox value="pool">Pool</Checkbox>
+        <Checkbox value="gym">Gym</Checkbox>
         
       </CheckboxGroup>
       </form>
-      <p className="mt-4 ml-1 text-default-500">
-        Selected: {groupSelected.join(", ")}
-      </p>
       <button onClick={()=>userDataTestRR()}>test button</button>
     </div>
   
