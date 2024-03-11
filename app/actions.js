@@ -33,13 +33,29 @@ export async function handleCertFormAction(prevData, formData){
 
 export async function handleBuzzFormAction(prevData, formData){
     console.log("handle buzz is going off")
-    console.log(formData)
+    console.log(Object.keys(formData))
     const annoyingArrayFix = [];
-    for(let i = 1; i < formData.length; i++){
+    /*for(let i = 1; i < formData.length; i++){
         annoyingArrayFix.push(formData[i])
+    }*/
+    //tempUserDataStore.buzzwords = annoyingArrayFix;
+    tempUserDataStore.buzzwords = formData;
+    console.log(`User buzzwords are now: ${tempUserDataStore.buzzwords}`)
+    revalidatePath('/interview/certifications')
+    return tempUserDataStore.buzzwords;
+}
+
+export async function handleTechnologiesAction(techArr){
+    console.log("handle technology is going off")
+    console.log(techArr)
+    //get rid of empty string
+    const annoyingArrayFix = [];
+    for(let i = 1; i < techArr.length; i++){
+        annoyingArrayFix.push(techArr[i])
     }
     tempUserDataStore.buzzwords = annoyingArrayFix;
     console.log(`User buzzwords are now: ${tempUserDataStore.buzzwords}`)
+    revalidatePath('/interview/certifications')
     return tempUserDataStore.buzzwords;
 }
 

@@ -7,7 +7,7 @@ import BuzzWords from "../Components/BuzzWords"
 import { useState } from "react"
 
 export default function MainCard(){
-    const [selected, setSelected] = useState([""]);
+    
     return (
     <Card
       isBlurred

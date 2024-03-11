@@ -6,9 +6,9 @@ import Link from 'next/link';
 import {usePathname} from "next/navigation";
 
 
-export default function MainTabSelections({certifications, clearance}){
+export default function MainTabSelections({certifications, clearance, technologies, experience, career}){
    
-    const {NextStep, PrevStep, CurrentStep } = useMultiStepForm([certifications, clearance])
+    const {NextStep, PrevStep, CurrentStep } = useMultiStepForm([certifications, clearance, technologies, experience, career])
 
     return <div className="grid">
         {CurrentStep}
