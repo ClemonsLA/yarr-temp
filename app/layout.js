@@ -14,11 +14,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Providers>
+          <main className="dark text-foreground bg-background">
 
-{children}
-
+            {children}
+          </main>
         </Providers>
-        </body>
+      </body>
     </html>
   );
 }
