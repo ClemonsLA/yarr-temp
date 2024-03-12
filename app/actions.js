@@ -26,6 +26,7 @@ export async function handleCertFormAction(prevData, formData){
     console.log(formData)
     tempUserDataStore.certifications.push(formData)
     console.log(`User certs are now: ${tempUserDataStore.certifications}`)
+    revalidatePath('./interview/Certifications')
     return tempUserDataStore.certifications;
 }
 
@@ -39,6 +40,7 @@ export async function handleBuzzFormAction(prevData, formData){
     //tempUserDataStore.buzzwords = annoyingArrayFix;
     tempUserDataStore.buzzwords = formData;
     console.log(`User buzzwords are now: ${tempUserDataStore.buzzwords}`)
+    revalidatePath('./interview/Technologies')
     return tempUserDataStore.buzzwords;
 }
 
