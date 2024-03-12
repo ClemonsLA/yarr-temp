@@ -18,7 +18,7 @@ export default function CareerRadio({usrCharacterSelection}){
   return <div className="flex flex-col gap-3">
 
       <RadioGroup
-        label="Select your favorite city"
+        label="Select your career spirit"
         value={usrCharacterSelection}
 
         onValueChange={charSelection}

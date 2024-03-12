@@ -10,8 +10,6 @@ export default function App({buzzwords}) {
   const [groupSelected, setGroupSelected] = React.useState(buzzwords);
   const [techFormState, setTechFormState] = useFormState(handleBuzzFormAction, null)
 
-
-
   const fuckThisForm = (groupSelected) =>{
     setGroupSelected(groupSelected);
     setTechFormState(groupSelected);
@@ -23,19 +21,19 @@ export default function App({buzzwords}) {
       <form action={async ()=>setTechFormState()}>
       <CheckboxGroup
         className="gap-1"
-        label="Select amenities"
+        label="Select Your Tech-Stack"
         orientation="horizontal"
         value={groupSelected}
         onChange={fuckThisForm}
         name="tech"
       >
         
-        <Checkbox value="wifi">Wifi</Checkbox>
-        <Checkbox value="tv">TV</Checkbox>
-        <Checkbox value="kitchen">Kitchen</Checkbox>
-        <Checkbox value="parking">Parking</Checkbox>
-        <Checkbox value="pool">Pool</Checkbox>
-        <Checkbox value="gym">Gym</Checkbox>
+        <Checkbox value="git">Git</Checkbox>
+        <Checkbox value="frontend">Frontend</Checkbox>
+        <Checkbox value="backend">Backend</Checkbox>
+        <Checkbox value="devops">Devops</Checkbox>
+        <Checkbox value="linux">Linux</Checkbox>
+        <Checkbox value="kubernetes">K8s</Checkbox>
         
       </CheckboxGroup>
       </form>

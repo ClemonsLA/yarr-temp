@@ -8,6 +8,7 @@ const tempUserDataStore = {
     experience: 0,
     certifications: [],
     buzzwords: ["wifi"],
+    clearance: '',
 }
 
 export async function userDataTestRR(){
@@ -23,11 +24,12 @@ export async function getUserDataPreload(){
 
 export async function revalidatePathAction(){
     //ALERT ALERT
-    // HEADS UP: This function is only being ran under the technologies page. It revalidates for all 4 pages though.
+    // HEADS UP: This function is only being ran under the technologies page. It revalidates for all 4 interview pages though.
     console.log('Starting revalidate action')
     revalidatePath('./interview/Certifications');
     revalidatePath('./interview/Technologies');
     revalidatePath('./interview/Career')
+    revalidatePath('./interview/Clearance')
     console.log('revalidate action executed');
     const revStringReturn = "revalidate has been executed!";
     return revStringReturn;
@@ -59,8 +61,6 @@ export async function handleTechnologiesAction(prev, techArr){
 }
 
 export async function handleCharFormAction(prevData, formData){
-    //HEADS UP
-    //Nextui component for a simple radio button is supposed to be an array. However we're treating it like a single string here
     console.log("handle char is going off")
     console.log(formData)
     tempUserDataStore.character = formData;
@@ -70,12 +70,19 @@ export async function handleCharFormAction(prevData, formData){
 }
 
 export async function handleExpFormAction(prevData, formData){
-    //HEADS UP
-    //Nextui component for a simple radio button is supposed to be an array. However we're treating it like a single string here
     console.log("handle experience is going off")
     console.log(formData)
     tempUserDataStore.experience = formData;
     console.log(`User experience is now: ${tempUserDataStore.character}`)
     revalidatePath('./interview/Experience')
     return tempUserDataStore.experience;
+}
+
+export async function handleClearanceFormAction(prevData, formData){
+    console.log("handle clearance is going off")
+    console.log(formData)
+    tempUserDataStore.clearance = formData;
+    console.log(`User clearance is now: ${tempUserDataStore.clearance}`)
+    revalidatePath('./interview/Clearance')
+    return tempUserDataStore.clearance;
 }
