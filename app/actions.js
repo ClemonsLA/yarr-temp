@@ -26,7 +26,6 @@ export async function handleCertFormAction(prevData, formData){
     console.log(formData)
     tempUserDataStore.certifications.push(formData)
     console.log(`User certs are now: ${tempUserDataStore.certifications}`)
-    revalidatePath('/interview/certifications')
     return tempUserDataStore.certifications;
 }
 
@@ -40,7 +39,6 @@ export async function handleBuzzFormAction(prevData, formData){
     //tempUserDataStore.buzzwords = annoyingArrayFix;
     tempUserDataStore.buzzwords = formData;
     console.log(`User buzzwords are now: ${tempUserDataStore.buzzwords}`)
-    revalidatePath('/interview/certifications')
     return tempUserDataStore.buzzwords;
 }
 
@@ -54,7 +52,6 @@ export async function handleTechnologiesAction(prev, techArr){
     }*/
     tempUserDataStore.buzzwords = techArr;
     console.log(`User buzzwords are now: ${tempUserDataStore.buzzwords}`)
-    revalidatePath('/interview/certifications')
     return tempUserDataStore.buzzwords;
 }
 
@@ -63,6 +60,5 @@ export async function handleCharFormAction(prevData, formData){
     console.log(formData)
     tempUserDataStore.character = formData;
     console.log(`User character is now: ${tempUserDataStore.character}`)
-    revalidatePath('/interview/career')
     return tempUserDataStore.character;
 }
