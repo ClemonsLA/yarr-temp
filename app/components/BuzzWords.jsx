@@ -10,6 +10,8 @@ export default function App({buzzwords}) {
   const [groupSelected, setGroupSelected] = React.useState(buzzwords);
   const [techFormState, setTechFormState] = useFormState(handleBuzzFormAction, null)
 
+
+
   const fuckThisForm = (groupSelected) =>{
     setGroupSelected(groupSelected);
     setTechFormState(groupSelected);

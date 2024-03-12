@@ -16,17 +16,7 @@ export default function App() {
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
   const [certValue, setCertValue] = React.useState('choosing');
   const [selectedKey, setSelectedKey] = React.useState(null);
-  /*
-  useEffect(() => {
-    const updateViews = async () => {
-      const updatedViews = await incrementViews()
-      setViews(updatedViews)
-    }
- 
-    updateViews()
-  }, [])
 
-  */
   
   const initState = {
     name: 'This',

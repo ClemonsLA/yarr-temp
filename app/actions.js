@@ -21,6 +21,15 @@ export async function getUserDataPreload(){
     return tempUserDataStore;
 }
 
+export async function revalidatePathAction(){
+    console.log('Starting revalidate action')
+    revalidatePath('./interview/Certifications');
+    revalidatePath('./interview/Technologies');
+    console.log('revalidate action executed');
+    const revStringReturn = "revalidate has been executed!";
+    return revStringReturn;
+}
+
 export async function handleCertFormAction(prevData, formData){
     console.log("handle certs is going off")
     console.log(formData)
