@@ -20,7 +20,7 @@ export default function ExperienceRadio({usrExpSelection}){
                 label="Years of Experience"
                 maxValue={20} 
                 minValue={0} 
-                value={usrExpSelection}
+                defaultValue={usrExpSelection}
                 onChangeEnd={usrSetNewVal}
                 className="max-w-md" 
               />
