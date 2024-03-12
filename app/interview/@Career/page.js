@@ -1,4 +1,4 @@
-import CareerRadio from "@/app/Components/CareerRadio"
+import CareerRadio from "@/app/components/CareerRadio"
 import {getUserDataPreload} from "../../actions"
 
 export default async function Career(){

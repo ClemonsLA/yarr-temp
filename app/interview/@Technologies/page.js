@@ -1,4 +1,4 @@
-import BuzzWords from "@/app/Components/BuzzWords"
+import BuzzWords from "@/app/components/BuzzWords"
 import { getUserDataPreload } from "@/app/actions";
 
 

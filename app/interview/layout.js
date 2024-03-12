@@ -11,7 +11,7 @@ export default function InterviewLayout({children, Career, Certifications, Exper
             <div className="h-[76vh] w-[58vw] box-border border-2 border-solid border-red-500">
                 <div className='grid'>
                     
-                    <div>hello</div>
+
                     <MainTabSelections Certifications={Certifications} Technologies={Technologies} Experience={Experience} Career={Career}></MainTabSelections>
                 </div>
             </div>

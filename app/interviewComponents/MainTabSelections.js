@@ -1,6 +1,6 @@
 'use client'
 import { useMultiStepForm } from './useMultiStepTabs';
-import Link from 'next/link';
+import React from 'react';
 
 
 
@@ -12,6 +12,5 @@ export default function MainTabSelections({Certifications, Technologies, Experie
         {CurrentStep}
         <button onClick={PrevStep}> Prev Step</button>
         <button onClick={NextStep}> Next Step</button>
-        <Link href="/interview/clearance"> test</Link>
     </div>
 }

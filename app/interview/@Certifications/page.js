@@ -1,4 +1,4 @@
-import CertSelect from '@/app/Components/CertSelect'
+import CertSelect from '@/app/components/CertSelect'
 import { getUserDataPreload } from "../../actions";
 
 export default async function Certifications(){
