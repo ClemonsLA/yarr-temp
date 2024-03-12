@@ -1,7 +1,9 @@
 import ExperienceRadio from "@/app/components/ExperienceRadio"
-export default function Experience(){
+import { getUserDataPreload } from "@/app/actions"
+export default async function Experience(){
+    const { experience } = await getUserDataPreload();
     return <div>
         <h1>Experience page</h1>
-        <ExperienceRadio/>
+        <ExperienceRadio usrExpSelection={experience}/>
     </div>
 }

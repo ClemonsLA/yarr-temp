@@ -36,7 +36,6 @@ export default function App() {
   const setModalState = (isOpen) => {
     onOpenChange(isOpen);
     setFormState(certValue)
-
   }
 
 
@@ -61,7 +60,6 @@ export default function App() {
                         onInputChange={onInputChange}
                         >
                         {(item) => <AutocompleteItem key={item.value} name="cert" id={item.value} value={item.value}>{item.label}</AutocompleteItem>}
-
                         </Autocomplete>
                     
                 </ModalBody>
