@@ -127,6 +127,7 @@ export async function handleSubmitButtonAction(credentialMaybe){
     console.log(freshNewURL);
     tempUserDataStore.returnedURL = freshNewURL;
 
+    revalidatePath('/interview/Review')
     permanentRedirect('/imageCreation')
 
 }
