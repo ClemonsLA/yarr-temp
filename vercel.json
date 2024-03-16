@@ -1,0 +1,5 @@
+{
+    "redirects": [
+      { "source": "/interview", "destination": "/imageCreation", "permanent": true }
+    ]
+  }
