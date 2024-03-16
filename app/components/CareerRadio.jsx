@@ -6,7 +6,7 @@ import {Radio, RadioGroup} from "@nextui-org/radio"
 import { handleCharFormAction } from "@/app/actions";
 
 
-export default function CareerRadio({usrCharacterSelection}){
+export function CareerRadio({usrCharacterSelection}){
   const [charSelected, setCharSelected] = React.useState([usrCharacterSelection]);
   const [charFormState, setCharFormState] = useFormState(handleCharFormAction, [])
 
@@ -26,9 +26,9 @@ export default function CareerRadio({usrCharacterSelection}){
         
         <Radio value="devdog">Developer Dog</Radio>
         <Radio value="cybercat">Cyber Cat</Radio>
-        <Radio value="bird">Cloud Eagle</Radio>
-        <Radio value="bear">Sales Bear</Radio>
-        <Radio value="penguin">Manager Penguin</Radio>
+        <Radio value="whiteowl">White Owl</Radio>
+        <Radio value="bturtle">BlockChain Tortoise</Radio>
+        <Radio value="linuxpenguin">Linux Penguin</Radio>
        
       </RadioGroup>
 

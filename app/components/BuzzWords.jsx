@@ -28,16 +28,15 @@ export default function App({buzzwords}) {
         name="tech"
       >
         
-        <Checkbox value="git">Git</Checkbox>
-        <Checkbox value="frontend">Frontend</Checkbox>
-        <Checkbox value="backend">Backend</Checkbox>
-        <Checkbox value="devops">Devops</Checkbox>
-        <Checkbox value="linux">Linux</Checkbox>
-        <Checkbox value="kubernetes">K8s</Checkbox>
+        <Checkbox value="Gitops">Gitops</Checkbox>
+        <Checkbox value="Frontend">Frontend</Checkbox>
+        <Checkbox value="Backend">Backend</Checkbox>
+        <Checkbox value="Devops">Devops</Checkbox>
+        <Checkbox value="Linux">Linux</Checkbox>
+        <Checkbox value="K8s">K8s</Checkbox>
         
       </CheckboxGroup>
       </form>
-      <button onClick={()=>userDataTestRR()}>test button</button>
     </div>
   
   );

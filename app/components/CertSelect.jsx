@@ -47,12 +47,12 @@ export default function App() {
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1">Modal Title</ModalHeader>
+              <ModalHeader className="flex flex-col gap-1">Add a cert</ModalHeader>
                 <ModalBody>
                     
                         <Autocomplete 
                         allowsCustomValue
-                        label="Search an animal" 
+                        label="Type to search" 
                         variant="bordered"
                         className="max-w-xs" 
                         defaultItems={certs}
@@ -65,10 +65,10 @@ export default function App() {
                 </ModalBody>
               <ModalFooter>
                 <Button key="certCancel" color="danger" variant="light" onPress={onClose}>
-                  Close
+                  Cancel
                 </Button>
                 <Button key="certAccept" color="primary" onPress={onClose}>
-                  Action
+                  Add
                 </Button>
               </ModalFooter>
             </>

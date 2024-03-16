@@ -1,14 +1,21 @@
 "use server"
 
 import { revalidatePath } from "next/cache";
+import { redirect } from 'next/navigation'
+import OpenAI from "openai"
 
 const tempUserDataStore = {
     username: 7373,
     character: 'cybercat',
     experience: 0,
     certifications: [],
-    buzzwords: ["wifi"],
+    buzzwords: [],
     clearance: '',
+    submitted: false,
+    submittedTimes: 0,
+    recievedPic: false,
+    recievedPicTimes: 0,
+    returnedURL: '',
 }
 
 export async function userDataTestRR(){
@@ -20,6 +27,10 @@ export async function userDataTestRR(){
 
 export async function getUserDataPreload(){
     return tempUserDataStore;
+}
+
+export async function getURLDataPreload(){
+    return tempUserDataStore.returnedURL;
 }
 
 export async function revalidatePathAction(){
@@ -85,4 +96,221 @@ export async function handleClearanceFormAction(prevData, formData){
     console.log(`User clearance is now: ${tempUserDataStore.clearance}`)
     revalidatePath('./interview/Clearance')
     return tempUserDataStore.clearance;
+}
+
+export async function handleButtonTestAction(something){
+    console.log("succesfully hit server with server action")
+    const buttonTestReturnStr = "Feel free to display this log in the client console";
+    return buttonTestReturnStr;
+}
+
+export async function handleSubmitButtonAction(credentialMaybe){
+    let masterArrayPusher = [];
+    //add " years" to each number in experience
+    let masterExperienceString = tempUserDataStore.experience + " years"
+    masterArrayPusher.push(masterExperienceString);
+    //seperate out the arrays
+    for(let i=0;i < tempUserDataStore.certifications.length; i++){
+        masterArrayPusher.push(tempUserDataStore.certifications[i]);
+    }
+    for(let i=0;i < tempUserDataStore.buzzwords.length; i++){
+        masterArrayPusher.push(tempUserDataStore.buzzwords[i]);
+    }
+    //package the rest of the data up
+    masterArrayPusher.push(tempUserDataStore.character);
+    masterArrayPusher.push(tempUserDataStore.clearance);
+
+    console.log(masterArrayPusher);
+
+    const freshNewURL = await PaintCreateAction(masterArrayPusher);
+    
+    console.log(freshNewURL);
+    tempUserDataStore.returnedURL = freshNewURL;
+
+    redirect('/imageCreation')
+
+}
+
+export async function PaintCreateAction(finDataArray){
+    finDataArray.forEach((val)=>
+    console.log(val)
+    )
+
+    const dataArrayCopy = [];
+    finDataArray.forEach((item) => dataArrayCopy.push(item))
+    dataArrayCopy.forEach((item) => console.log(`Here we have a ${item}`))
+    
+    const stringArrayData = [];
+    const stringArrayItems = [];
+    const stringArrayColors = [];
+
+    for(let i = 0; dataArrayCopy.length > i ; i++){
+        console.log(i);
+        switch (dataArrayCopy[i]) {
+            case "cybercat":{
+                const catString = "domestic cat";
+                stringArrayData.push(catString);
+                break;
+            }
+            case "devdog":{
+                const dogString = "dog";
+                stringArrayData.push(dogString);
+                break;
+            }
+            case "whiteowl":{
+                const whiteowlString = "white owl";
+                stringArrayData.push(whiteowlString);
+                break;
+            }
+            case "bturtle":{
+                const tortoiseString = "tortoise";
+                stringArrayData.push(tortoiseString);
+                break;
+            }
+            case "linuxpenguin":{
+                const penguinString = "penguin";
+                stringArrayData.push(penguinString);
+                break;
+            }
+            case "0 years":
+            case "1 years":
+            case "2 years":{
+                const babyString = "baby";
+                stringArrayData.push(babyString);
+                break;
+            }
+            case"3 years":{
+                const teen = "teenager";
+                stringArrayData.push(teen);
+                break;
+            }
+            case "4 years":
+            case "5 years":{
+                const yngadult = "young adult";
+                stringArrayData.push(yngadult);
+                break;
+            }
+            case "6 years":
+            case "7 years":
+            case "8 years":{
+                const adult = "adult";
+                stringArrayData.push(adult);
+                break;
+            }
+            case "9 years":
+            case "10 years":
+            case "11 years":
+            case "12 years":
+            case "13 years":
+            case "14 years":
+            case "15 years":{
+                const wiseadult = "wise older adult";
+                stringArrayData.push(wiseadult);
+                break;
+            }
+            case "16 years":
+            case "17 years":
+            case "18 years":
+            case "19 years":
+            case "20 years":{
+                const ancientString = "wise powerful old wizard";
+                stringArrayData.push(ancientString);
+                break;
+            }
+            case "Sec +": {
+                const secplusString = "shield emblem";
+                stringArrayItems.push(secplusString);
+                break;
+            }
+            case "CCNA": {
+                const ccnaString = "spider-web emblem";
+                stringArrayItems.push(ccnaString);
+                break;
+            }
+            case "CCP": {
+                const ccpString = "cloud above their head";
+                stringArrayItems.push(ccpString);
+                break;
+            }
+            
+            case "Gitops": {
+                const gitOpsString = "#F05032"
+                stringArrayColors.push(gitOpsString);
+                break;
+            }
+            case "K8s": {
+                const kubeString = "#326CE5"
+                stringArrayColors.push(kubeString);
+                break;
+            }
+            case "Frontend": {
+                const frontString = "#87CEEB"
+                stringArrayColors.push(frontString);
+                break;
+            }
+            case "Backend": {
+                const backString = "#228B22"
+                stringArrayColors.push(backString);
+                break;
+            }
+            case "Devops": {
+                const devopsString = "#CC5500"
+                stringArrayColors.push(devopsString);
+                break;
+            }
+            case "Linux": {
+                const linuxBuzzString = "#FF0000"
+                stringArrayColors.push(linuxBuzzString);
+                break;
+            }
+            case "secret": {
+                const secretString = "silver chain necklace"
+                stringArrayItems.push(secretString);
+                break;
+            }
+            case "none": {
+                const secretString = "leather necklace"
+                stringArrayItems.push(secretString);
+                break;
+            }
+            case "ts": {
+                const TsString = "gold chain necklace"
+                stringArrayItems.push(TsString);
+                break;
+            }
+            default: {
+                console.log("couldn't find anymore");
+            }
+        }
+
+    }
+//Prompt structure
+
+    function combineStringFunc(arr){
+        let longAssString = "";
+        arr.forEach((val) => longAssString = longAssString + " " + val + ",");
+        return longAssString;
+    }
+    //const characterTraits = `Cold wax oil painting with a ${stringArrayData[2]} frame, depicting a ${stringArrayData[1]} ${stringArrayData[0]}. `;
+    
+    const characterTraits = `Cold wax oil painting, depicting a ${stringArrayData[1]} - a ${stringArrayData[0]}. `;
+    const items = `The depicted ${stringArrayData[0]} is wearing or holding a: ${combineStringFunc(stringArrayItems)}. `;
+    const colors = `The main colors are: ${combineStringFunc(stringArrayColors)}. `;
+
+    const goldenPrompt = `${characterTraits}${items}${colors}`;
+
+    console.log(goldenPrompt);
+    const openai = new OpenAI({
+        apiKey: process.env.OPENAI_API_KEY,
+    });
+    const response =  await openai.images.generate({
+        model: "dall-e-3",
+        prompt: goldenPrompt,
+        n: 1,
+        size: "1024x1024",
+        quality: "hd",
+        style: "vivid",
+    });
+    const image_url = response.data[0].url;
+    return image_url;
 }
