@@ -1,7 +1,7 @@
 "use server"
 
 import { revalidatePath } from "next/cache";
-import { redirect } from 'next/navigation'
+import { redirect, permanentRedirect } from 'next/navigation'
 import OpenAI from "openai"
 
 const tempUserDataStore = {
@@ -127,7 +127,7 @@ export async function handleSubmitButtonAction(credentialMaybe){
     console.log(freshNewURL);
     tempUserDataStore.returnedURL = freshNewURL;
 
-    redirect('/imageCreation')
+    permanentRedirect('/imageCreation')
 
 }
 

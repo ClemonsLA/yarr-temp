@@ -2,6 +2,8 @@ import ReviewTable from "@/app/components/ReviewTable"
 import { getUserDataPreload } from "@/app/actions"
 import { handleSubmitButtonAction } from "@/app/actions";
 import SubmitArtButton from "@/app/components/SubmitArtButton";
+import { cache } from 'react'
+import { getAllItems, getURLItem } from '@/app/components/getUserSelections'
 
 
 export default async function Review(){
@@ -11,7 +13,7 @@ export default async function Review(){
            certifications,
            buzzwords,
            clearance,
-    } = await getUserDataPreload();
+    } = await getAllItems();
     
 
     return <div className="grid grid-rows-6 min-w-full h-[75vh]">                

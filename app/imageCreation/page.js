@@ -1,6 +1,7 @@
 import ImageDisplayer from "@/app/components/ImageDisplayer"
 import {getURLDataPreload} from '@/app/actions'
 import { cookies } from 'next/headers'
+import {cache} from 'react'
 
 export default async function imageCreation(){
     const myBandAidFix = cookies();
