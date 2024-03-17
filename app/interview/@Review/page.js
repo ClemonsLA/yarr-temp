@@ -5,6 +5,8 @@ import SubmitArtButton from "@/app/components/SubmitArtButton";
 import { cache } from 'react'
 import { getAllItems, getURLItem } from '@/app/components/getUserSelections'
 
+export const maxDuration = 300; 
+export const dynamic = 'force-dynamic';
 
 export default async function Review(){
     const {username,

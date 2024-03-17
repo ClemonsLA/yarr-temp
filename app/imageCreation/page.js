@@ -3,7 +3,11 @@ import {getURLDataPreload} from '@/app/actions'
 import { cookies } from 'next/headers'
 import {cache} from 'react'
 
+export const maxDuration = 300; 
+export const dynamic = 'force-dynamic';
+
 export default async function imageCreation(){
+
     const myBandAidFix = cookies();
     const userFreshURL = await getURLDataPreload();
     return <div className="grid grid-rows-2 ">

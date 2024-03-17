@@ -1,5 +1,8 @@
 import MainTabSelections from '../interviewComponents/MainTabSelections'
 
+export const maxDuration = 300; 
+export const dynamic = 'force-dynamic';
+
 export default function InterviewLayout({children, Career, Certifications, Experience, Technologies, Clearance, Review, }){
     return <div className="h-[100vh] w-[100vw] grid justify-items-center content-center">
 
