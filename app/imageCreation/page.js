@@ -17,6 +17,7 @@ export default async function imageCreation(){
                 width={1024}
                 height={1024}
                 alt="Dalle Generated Image"
+                priority={true}
                 style={{
                     objectFit: "contain",
                     width: '100%',
