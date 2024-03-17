@@ -1,9 +1,13 @@
+'use client'
+
 import Image from 'next/image';
 
 export default function ImageDisplayer({url}){
+    const userURL = url;
+
     return <div className="grid justify-center">
             <Image
-                src={url}
+                src={userURL}
                 width={1024}
                 height={1792}
                 alt="Dalle Generated Image"
