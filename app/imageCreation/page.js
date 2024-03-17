@@ -1,5 +1,6 @@
 //import ImageDisplayer from "@/app/components/ImageDisplayer"
 import {getURLDataPreload} from '@/app/actions'
+import Image from 'next/image';
 import { cookies } from 'next/headers'
 import {cache} from 'react'
 
