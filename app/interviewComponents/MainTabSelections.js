@@ -3,7 +3,8 @@ import { useMultiStepForm } from './useMultiStepTabs';
 import React from 'react';
 
 
-
+export const maxDuration = 300; // This function can run for a maximum of 5 seconds
+export const dynamic = 'force-dynamic';
 export default function MainTabSelections({Certifications, Technologies, Experience, Career, Clearance, Review, }){
    
     const {NextStep, PrevStep, CurrentStep } = useMultiStepForm([Career, Experience, Certifications, Technologies, Clearance, Review, ])
