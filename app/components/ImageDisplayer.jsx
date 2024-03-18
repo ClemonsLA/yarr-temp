@@ -22,8 +22,7 @@ export default function ImageDisplayer({url}){
                             }}
                 sizes="100vw"
                 priority={true}
-                loading='eager'
-                onLoad={(e) => setImageState(e.target.naturalWidth)}>
+                loading="eager">
             </Image>
     </div>
 }
