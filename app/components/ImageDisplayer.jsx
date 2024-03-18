@@ -5,9 +5,6 @@ import { useEffect, useState } from 'react';
 
 export default function ImageDisplayer({url}){
     const {imageState, setImageState} = useState('')
-    useEffect(()=> {
-        setImageState('loading')
-    },[imageState])
 
     return <div className="grid justify-center">
             <Image
