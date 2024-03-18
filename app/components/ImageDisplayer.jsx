@@ -15,9 +15,6 @@ export default function ImageDisplayer({url}){
                     objectFit: "contain",
                     width: '100%',
                     height: 'auto',
-                            }}
-                sizes="100vw"
-                priority={true}
-                loading="lazy">
+                            }}>
             </image>
 }
