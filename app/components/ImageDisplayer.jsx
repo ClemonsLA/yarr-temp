@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 export default function ImageDisplayer({url}){
     const {imageState, setImageState} = useState('')
 
-    return <div className="grid justify-center">
+    return <div className="grid justify-center" style={{ position: 'relative', width: '500px', height: '300px' }}>
             <Image
                 src={url}
                 width={1024}
