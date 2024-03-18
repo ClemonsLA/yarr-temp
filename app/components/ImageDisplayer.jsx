@@ -19,7 +19,7 @@ export default function ImageDisplayer({url}){
                             }}
                 sizes="100vw"
                 priority={true}
-                loading="eager">
+                loading="lazy">
             </Image>
     </div>
 }
