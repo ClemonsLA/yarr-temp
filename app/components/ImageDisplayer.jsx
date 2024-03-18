@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 export default function ImageDisplayer({url}){
     const {imageState, setImageState} = useState('')
     useEffect(()=> {
+        setImageState('loading')
     },[imageState])
 
     return <div className="grid justify-center">
@@ -22,7 +23,7 @@ export default function ImageDisplayer({url}){
                 sizes="100vw"
                 priority={true}
                 loading='eager'
-                onLoad={(e) => console.log(e.target.naturalWidth)}>
+                onLoad={(e) => setImageState(e.target.naturalWidth)}>
             </Image>
     </div>
 }
