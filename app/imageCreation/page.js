@@ -3,7 +3,8 @@ import {getURLDataPreload} from '@/app/actions'
 import { cookies } from 'next/headers'
 import { cache } from 'react'
 
-export const maxDuration = 300; 
+export const maxDuration = 300;
+export const dynamic = 'force-dynamic';
 
 export default async function imageCreation(){
 
