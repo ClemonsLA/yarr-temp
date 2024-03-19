@@ -18,7 +18,7 @@ export default function ImageDisplayer({url}){
                     width: '100%',
                     height: 'auto',
                             }}
-                onLoad={(e)=>printTest}>
+                onLoad={(e)=>printTest()}>
 
             </Image>
 }
