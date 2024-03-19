@@ -1,10 +1,13 @@
 'use client'
-
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 export default function ImageDisplayer({url}){
     const {imageState, setImageState} = useState(url);
+
+    function printTest(){
+        console.log('image has been loaded')
+    }
     return <Image
                 src={url}
                 width={1024}
@@ -14,6 +17,8 @@ export default function ImageDisplayer({url}){
                     objectFit: "contain",
                     width: '100%',
                     height: 'auto',
-                            }}>
+                            }}
+                onLoad={(e)=>printTest}>
+
             </Image>
 }
