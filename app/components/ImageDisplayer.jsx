@@ -17,8 +17,11 @@ export default function ImageDisplayer({url}){
                     objectFit: "contain",
                     width: '100%',
                     height: 'auto',
-                            }}
-                onLoad={(e)=>printTest()}>
+                            }}>
 
             </Image>
 }
+
+/*
+                onLoad={(e)=>printTest()}
+*/
