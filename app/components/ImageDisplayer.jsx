@@ -4,8 +4,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 export default function ImageDisplayer({url}){
-    const {imageState, setImageState} = useState('')
-    setImageState('https://res.cloudinary.com/dd7mi7bpp/image/upload/v1690665596/cld-sample-5.jpg')
+    const {imageState, setImageState} = useState(url);
     return <Image
                 src={imageState}
                 width={1024}
