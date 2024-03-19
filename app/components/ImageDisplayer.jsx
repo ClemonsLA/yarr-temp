@@ -7,7 +7,7 @@ export default function ImageDisplayer({url}){
     const {imageState, setImageState} = useState('')
     const coolFunc = () => {setImageState('https://res.cloudinary.com/dd7mi7bpp/image/upload/v1690665596/cld-sample-5.jpg')}
     return <Image
-                src={coolFunc}
+                src={()=> coolFunc}
                 width={1024}
                 height={1792}
                 alt="Dalle Generated Image"
