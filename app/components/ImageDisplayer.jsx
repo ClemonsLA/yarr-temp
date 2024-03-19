@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 export default function ImageDisplayer({url}){
     const {imageState, setImageState} = useState(url);
     return <Image
-                src={imageState}
+                src={url}
                 width={1024}
                 height={1792}
                 alt="Dalle Generated Image"
