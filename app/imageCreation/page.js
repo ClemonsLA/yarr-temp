@@ -11,10 +11,10 @@ export default async function imageCreation(){
     //const myBandAidFix = cookies();
     const userFreshURL = await getURLDataPreload();
     return <div className="grid grid-rows-2 ">
-        <div className="grid justify-center" style={{ position: 'relative', width: '500px', height: '300px' }}>
-            <ImageDisplayer url={userFreshURL} />
-    </div>
-        <button>Paint me!</button>
-        <div>{userFreshURL}</div>
+                <div className="grid justify-center" style={{ position: 'relative', width: '500px', height: '300px' }}>
+                    <ImageDisplayer url={userFreshURL} />
+                </div>
+                <button>Paint me!</button>
+                <div>{userFreshURL}</div>
     </div>
 }
