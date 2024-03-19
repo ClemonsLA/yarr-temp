@@ -313,5 +313,7 @@ export async function PaintCreateAction(finDataArray){
         style: "vivid",
     });
     const image_url = response.data[0].url;
+    tempUserDataStore.returnedURL = image_url;
+    revalidatePath('/interview/review')
     return image_url;
 }

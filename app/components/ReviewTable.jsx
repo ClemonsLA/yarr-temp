@@ -1,6 +1,6 @@
 'use client'
 
-export default function ReviewTable({ usernameItems, characterItems, experienceItems, certificationsItems, buzzwordsItems, clearanceItems }){
+export default function ReviewTable({ usernameItems, characterItems, experienceItems, certificationsItems, buzzwordsItems, clearanceItems, returnedURLItem }){
     return <div>
         <div className="grid grid-cols-2">
             <div>Wallet</div> <div> {usernameItems} </div> 
@@ -9,6 +9,7 @@ export default function ReviewTable({ usernameItems, characterItems, experienceI
             <div>Certs</div> <div> {certificationsItems} </div>
             <div>Technologies</div> <div> {buzzwordsItems} </div>
             <div>Clearance</div> <div> {clearanceItems} </div>
+            <div>Painting URL</div> <div>{returnedURLItem}</div>
         </div>
     </div>
 }

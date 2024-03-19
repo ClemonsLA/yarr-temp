@@ -15,6 +15,7 @@ export default async function Review(){
            certifications,
            buzzwords,
            clearance,
+           returnedURL,
     } = await getAllItems();
     
 
@@ -27,7 +28,9 @@ export default async function Review(){
                         experienceItems={experience} 
                         certificationsItems={certifications} 
                         buzzwordsItems={buzzwords} 
-                        clearanceItems={clearance}/>
+                        clearanceItems={clearance}
+                        returnedURLItem={returnedURL}
+                        />
                 </div>
                 <SubmitArtButton serverActionPropSubmitBut={handleSubmitButtonAction}></SubmitArtButton>
     </div>
