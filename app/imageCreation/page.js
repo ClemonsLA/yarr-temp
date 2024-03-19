@@ -13,6 +13,7 @@ export default async function imageCreation(){
     const {
         returnedURL,
     } = await getURLItem();
+    console.log(returnedURL);
 
     const userFreshURL = await getURLDataPreload();
     return <div className="grid grid-rows-2 ">
